@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  distDir: 'out',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -11,9 +12,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Fix for GitHub Pages path issues
-  basePath: process.env.NODE_ENV === 'production' ? '/xylen-lab-website' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/xylen-lab-website/' : '',
+  // Remove basePath and assetPrefix to fix CSS loading
+  // GitHub Pages will handle the path automatically
 }
 
 export default nextConfig
