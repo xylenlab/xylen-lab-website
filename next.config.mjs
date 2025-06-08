@@ -11,8 +11,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/xylen-lab-website' : '',
+  // Fix for GitHub Pages path issues
   basePath: process.env.NODE_ENV === 'production' ? '/xylen-lab-website' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/xylen-lab-website/' : '',
 }
 
 export default nextConfig
