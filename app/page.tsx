@@ -122,6 +122,11 @@ export default function XylenLabWebsite() {
   const [language, setLanguage] = useState<"en" | "es">("en")
   const t = translations[language]
 
+  // Fix image paths for GitHub Pages
+  const getImagePath = (path: string) => {
+    return path
+  }
+
   const services = [
     {
       icon: <Megaphone className="h-8 w-8" />,
