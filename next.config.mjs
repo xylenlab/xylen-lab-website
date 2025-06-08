@@ -12,8 +12,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Remove basePath and assetPrefix to fix CSS loading
-  // GitHub Pages will handle the path automatically
+  // Fix for GitHub Pages - use environment variable to detect production
+  basePath: process.env.GITHUB_ACTIONS ? '/xylen-lab-website' : '',
+  assetPrefix: process.env.GITHUB_ACTIONS ? '/xylen-lab-website/' : '',
 }
 
 export default nextConfig
