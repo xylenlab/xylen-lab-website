@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Globe, Play, Monitor, Camera, Edit, Megaphone, Mail, ChevronDown } from "lucide-react"
+import { Globe, Monitor, Camera, Edit, Megaphone, Mail, ChevronDown } from "lucide-react"
 import Image from "next/image"
 
 const translations = {
@@ -122,11 +122,6 @@ export default function XylenLabWebsite() {
   const [language, setLanguage] = useState<"en" | "es">("en")
   const t = translations[language]
 
-  // Fix image paths for GitHub Pages
-  const getImagePath = (path: string) => {
-    return path
-  }
-
   const services = [
     {
       icon: <Megaphone className="h-8 w-8" />,
@@ -218,12 +213,9 @@ export default function XylenLabWebsite() {
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                 >
                   {t.hero.cta}
-                </Button>
-                <Button variant="outline" size="lg" className="group">
-                  <Play className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
-                  Watch Demo
                 </Button>
               </div>
             </div>
