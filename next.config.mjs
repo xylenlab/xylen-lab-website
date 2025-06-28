@@ -12,9 +12,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Fix for GitHub Pages - use environment variable to detect production
-  basePath: process.env.GITHUB_ACTIONS ? '/xylen-lab-website' : '',
-  assetPrefix: process.env.GITHUB_ACTIONS ? '/xylen-lab-website/' : '',
+  // Correct configuration for GitHub Pages
+  basePath: '/xylen-lab-website',
+  assetPrefix: '/xylen-lab-website/',
 }
 
 export default nextConfig
